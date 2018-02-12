@@ -1,0 +1,15 @@
+Project must have a player system
+  - Allow for 2 CP Players
+  - Allow for 1 CP Players and 1 Player
+  - Allow for 2 Players
+
+Project must deal and store cards dealt
+  - Deal cards until one of the players selection is met
+  - Store list of cards that have been dealt
+
+Project must allow users to select sequence of cards
+  - Allow players to pick sequence
+  - Generate sequence for CP players
+  
+Project must have system to check equality
+  - Check player sequence vs dealt cards

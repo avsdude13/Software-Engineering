@@ -1,0 +1,12 @@
+Testsuite: swefun.cardgames.playingcards.HandTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 sec
+
+Testcase: encodeTest took 0.012 sec
+Testcase: royalHandTest took 0.001 sec
+Testcase: equalsTest took 0.001 sec
+Testcase: iteratorTest took 0.001 sec
+Testcase: getCardOutOfBoundsTest took 0 sec
+Testcase: setAndGetTest took 0.001 sec
+Testcase: sortTest took 0.002 sec
+Testcase: aceHeartsHandTest took 0 sec
+Testcase: defaultHandTest took 0 sec

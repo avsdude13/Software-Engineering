@@ -1,0 +1,86 @@
+package Districting;
+
+/**
+ * @author Josh McKinstry
+ *
+ */
+public class Voter {
+
+    /** Party association of voter. */
+    private char party;
+    /** Numerical value to distinguish voters in a region. */
+    private int voterID;
+    /** Truth value to identify whether voter is in a district. */
+    private boolean isInDistrict;
+
+    /**
+     * Constructor creates voter with ID reference, does not assign party.
+     * @param voterID numerical value to differentiate between voters
+     */
+    public Voter(final int voterID) {
+        this.voterID = voterID;
+        this.isInDistrict = false;
+    }
+
+    /**
+     * Constructor creates voter with ID reference, assigns party.
+     * @param voterID numerical value to differentiate between voters
+     * @param party char value 'A' or 'B' to determine party affiliation
+     */
+    public Voter(final int voterID, final char party) {
+        this.voterID = voterID;
+        this.party = party;
+        this.isInDistrict = false;
+    }
+
+    /**
+     * Get the party of this voter object.
+     * @return Party of the selected voter
+     */
+    private char getParty() {
+        return this.party;
+    }
+
+    /**
+     * Get the voter's identification number.
+     * @return Region unique ID number of voter
+     */
+    private int getID() {
+        return this.voterID;
+    }
+
+    /**
+     * Gets truth value of isInDistrict.
+     * @return true if voter is in district, false otherwise
+     */
+    private boolean getIsInDistrict() {
+        return this.isInDistrict;
+    }
+
+    /**
+     * Sets party of the voter.
+     * @param party The voters desired party
+     */
+    public void setParty(final char party) {
+        this.party = party;
+    }
+
+    /**
+     * Set the truth value of isInDistrict.
+     * @param inDistrict true if voter is in district, false otherwise
+     */
+    public void setIsInDistrict(final boolean inDistrict) {
+        this.isInDistrict = inDistrict;
+    }
+
+    /**
+     * Represent Voter as a string of ID and Party.
+     * @return voterString formatted "Voter 'ID' supports Party 'Party'"
+     */
+    public String toString() {
+        String voterString = "Voter " + this.voterID
+            + " supports Party " + this.party;
+        return voterString;
+    }
+
+}

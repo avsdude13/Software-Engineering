@@ -1,0 +1,23 @@
+Requirements
+•	Deck must have 52 cards as in a 'standard' deck
+•	Card must have one of four suits (clubs, spades, heart, diamonds)
+•	Suits must have one of two colors (clubs and spades=black, hearts and 	diamonds = red) 
+•	Each suit must contain 13 cards (Ace,2,3,...,J,Q,K)
+•	Game must allow for 0 to 8 players 
+•	Players must be able to choose their color sequence
+•	The game must be able to keep track of last three cards dealt
+•	The game must be able to compare the last three cards against the 	players' chosen sequences
+•	The game must be able to keep track of each individual player's 	tricks in order to keep score
+•	The deck must be shuffle-able
+•	There must be a discard pile to keep used cards out of the deck
+•	The game must be able to deal from the top of the deck
+•	The cards must be able to be displayed face up
+•	There must be a winner **
+•	There must be a tie-breaker of some sort **
+•	The game must continue until the deck is exhausted **
+•	If the final trick is not won by any player it must be able to be discarded to allow game to end **
+
+**Follow up with client:
+1.	Ensure that the client wants the game to end when the deck has been 	exhausted rather than reshuffling the discard pile and continuing on.
+2.	Verify that there must be no winner, i.e. that there can be no ties.
+3.	If there must be a winner, discuss tie breaker options.

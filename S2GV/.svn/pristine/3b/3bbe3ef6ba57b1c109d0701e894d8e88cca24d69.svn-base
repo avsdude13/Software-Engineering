@@ -1,0 +1,134 @@
+/**
+ * District class is modified by the Districting class.
+ * Districts divide regions into groups of voters
+ * and there are a set number of districts per region.
+ * All districts contain as close as equal as possible
+ * number of voters, and the size of any one district
+ * can never be greater than 1.
+ * Districts are non-overlapping and contiguous.
+ * @author Josh McKinstry
+ * I've made some adjustments. -Bob
+ */
+public class District {
+
+    /** Array of the voters contained in district. */
+    private Voter[] votersInDistrict;
+    /** String identifier to distinguish districts. */
+    private String districtID;
+    /** Party with most voters in district is favored. */
+    private char districtFavoredParty;
+    /** For method addVoter and removeVoter. - Bob **/
+    private int counterForVotersInDistrict;
+
+    /**
+     * Constructor builds new, empty district.
+     * @param districtID String to differentiate districts
+     */
+    public District(final String districtID) {
+        this.districtID = districtID;
+        this.votersInDistrict = new Voter[0];
+    }
+
+    /**
+     * Constructor builds, new empty district with specific size.
+     * @param districtID String to differentiate districts
+     * @param numVoters Number of voters in district/district size
+     */
+    public District(final String districtID, final int numVoters) {
+        this.districtID = districtID;
+        this.votersInDistrict = new Voter[numVoters];
+    }
+
+    /**
+     * Add voter to votersInDistrict.
+     * @param voter Voter object to be added
+     * I've made some adjustments. - Bob. 
+     */
+    public void addVoter(final Voter voter) {
+
+      if(counterForVotersInDistrict == 0){
+      
+         votersInDistrict[0] = voter;
+      
+         counterForVotersInDistrict++;
+      
+         return; //returns so no further body of code gets executed.
+      
+      }
+
+      votersInDistrict[counterForVotersInDistrict] = voter;
+
+      counterForVotersInDistrict++;      
+
+    }
+
+    /**
+     * Remove voter from votersInDistrict.
+     * @param voter Voter object to be removed
+     * I've made some adjustments. -Bob
+     */
+    public void removeVoter(final Voter voter) {
+
+      if(votersInDistrict.length == 0){
+      
+         System.out.println("This is a ghost town."); //Print string when try to remove a voter from an empty district, and return. -Bob 
+      
+         return;
+      
+      }
+
+      --counterForVotersInDistrict;
+
+      votersInDistrict[counterForVotersInDistrict] = null; //Decrement counterForVotersInDistrict, so the latest voter can be removed. -Bob    
+
+    }
+
+    /**
+     * Reset district, size of district remains constant.
+     * I've made some adjustments. -Bob
+     */
+    public void clearDistrict() {
+
+      //Something classis we've learned from the CS 1.
+      //The for loop iterates over each index and nullifies everything. -Bob.
+      for(int i = 0; i < votersInDistrict.length; i++){
+      
+         votersInDistrict[i] = null;
+      
+      }   
+
+    }
+
+    /**
+     * Retrieve unique district identifier.
+     * @return districtID Unique String distinguishing districts
+     */
+    public String getDistrictID() {
+        return districtID;
+    }
+
+    /**
+     * Set String identification for district.
+     * @param districtID Unique String distinguishing districts
+     */
+    public void setDistrictID(final String districtID) {
+
+    }
+
+    /**
+     * Retrieve favored party for district.
+     * @return districtFavoredParty
+     */
+    public char getFavoredParty() {
+        return districtFavoredParty;
+    }
+
+    /**
+     * Set the favored party of the district.
+     * @param party Party that is favored
+     */
+    private void setFavoredParty(final char party) {
+
+    }
+
+}

@@ -1,0 +1,17 @@
+Testsuite: swefun.cardgames.ThreeCardRacePlayerTest
+Tests run: 4, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.103 sec
+
+Testcase: interactivityAccessorTest took 0.009 sec
+Testcase: nameAccessorTest took 0.001 sec
+Testcase: getSequenceInteractiveTest took 0.005 sec
+	Caused an ERROR
+null
+java.lang.NullPointerException
+	at swefun.cardgames.ThreeCardRacePlayerTest.getSequenceInteractiveTest(ThreeCardRacePlayerTest.java:61)
+
+Testcase: getSequenceNonInteractiveTest took 0.002 sec
+	Caused an ERROR
+null
+java.lang.NullPointerException
+	at swefun.cardgames.ThreeCardRacePlayerTest.getSequenceNonInteractiveTest(ThreeCardRacePlayerTest.java:41)
+

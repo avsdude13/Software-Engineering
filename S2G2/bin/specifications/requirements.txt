@@ -1,0 +1,98 @@
+Card subproject of Card Games project [$Revision: 295 $]
+=====================================
+
+The overall objective of the Card Games project is providing executable models of games that involve the use of playing cards.  A model of playing cards and commonly used aggregations of them is needed to support this objective.
+
+The primary goal of the Card subproject is that of providing a model component that represents individual playing cards and common aggregations of cards.
+
+In this document, "product" refers to the model that represents the information and behavior of cards and card-specific aggregations.  Note that, in this document, the terms "playing card" and "card" are used interchangeably and with identical meaning.
+
+----------------------
+Candidate Requirements
+----------------------
+1. The product must provide a set of ranks that includes the Standard Ranks
+
+2. The product must provide a set of suits that includes the Standard Suits
+
+3. The product must provide a means to modify the suits (add, remove, reorder)
+
+4. The product must provide a means to modify the ranks (add, remove, reorder)
+
+5. The product must represent individual cards
+5.1. Data attributes of a card must include the following:
+5.1.1. Rank
+5.1.2. Suit
+5.2. Behaviors of a card must include the following:
+5.2.1. Access the card rank
+5.2.2. Access the card suit
+5.2.3. Determine equivalence of one card with another
+5.2.3.1. Two cards are equivalent if both have the same value for rank and suit
+5.2.3. Display its rank and suit in human-accessible form
+
+6. The product must represent a deck of cards
+6.1. Data attributes of a deck must include the following:
+6.1.1. An ordered set of cards
+6.2. Behaviors of a deck must include the following:
+6.2.1. Establish a fresh deck
+6.2.2. Access the number of cards in the deck
+6.2.3. Access a card at a specified location in the deck
+6.2.4. Add a card to the deck at a specified location
+6.2.5. Remove a card from the deck at a specified location
+6.2.6. Simulate shuffling the deck
+6.3.7. Iterate over the cards in the deck
+
+7. The product must represent a hand of cards
+7.1. Data attributes of a hand must include the following:
+7.1.1. An ordered set of cards
+7.2. Behaviors of a hand must include the following:
+7.2.1. Access the number of cards in the hand
+7.2.2. Access a card at a specified location in the hand
+7.2.3. Iterate over the cards in the hand
+7.2.4. Sort the cards in the hand according to specified criteria
+         (for example, by rank, by suit, by fresh deck ordering, ...)
+7.2.5. Add a specified card to the hand
+7.2.6. Remove a specified card from the hand
+7.2.7. Determine equivalence of one hand with another
+7.2.7.1. Two hands are equivalent if the cards they contain are equivalent [ambig]
+7.2.8. Display the cards in human-accessible form
+
+
+-----------
+Definitions
+-----------
+          Card:: An entity representing a playing card
+
+          Deck:: An ordered set of cards
+
+    Fresh Deck:: A pre-established fixed ordering of a deck;
+                 for example, a deck comprised of the
+                 cross-product of Standard Ranks and
+                 Standard Suits will have a fresh deck
+                 ordering of Ace of Clubs, Deuce of Clubs,
+                 Trey of Clubs, Four of Clubs, ... ,
+                 Queen of Clubs, King of Clubs, Ace of Diamonds,
+                 Deuce of Diamonds, ... , King of Diamonds,
+                 Ace of Hearts, Deuce of Hearts, ... ,
+                 King of Hearts, Ace of Spades, ..., King of Spades
+
+          Hand:: A set of cards
+
+         Joker:: [A] A distinguished suit outside of the Standard Suits
+                 [B] A distinguished rank outside of the Standard Ranks
+                 [C] A distinguished card outside of (Standard Ranks x Standard Suits)
+
+  Playing Card:: Synonym for Card (see: Card)
+
+          Rank:: An extensible ordered set of values
+
+ Standard Deck:: A deck comprised of the 52 cards representing the
+                 cross-product of Standard Ranks and Standard Suits
+
+Standard Ranks:: An ordered set of rank values comprised of
+                   Ace, Deuce, Trey, Four, Five, Six, Seven,
+                   Eight, Nine, Ten, Jack, Queen, King
+
+          Suit:: An extensible ordered set of values
+
+Standard Suits:: An ordered set of suit values comprised of
+                   Clubs, Diamonds, Hearts, Spades

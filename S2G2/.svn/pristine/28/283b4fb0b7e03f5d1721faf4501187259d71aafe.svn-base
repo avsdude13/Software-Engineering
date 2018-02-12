@@ -1,0 +1,9 @@
+Testsuite: swefun.cardgames.playingcards.CardTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 sec
+
+Testcase: equalsNullTest took 0.008 sec
+Testcase: copyTest took 0.001 sec
+Testcase: equalsOtherClassTest took 0 sec
+Testcase: sevenOfClubsTest took 0.001 sec
+Testcase: queenOfHeartsTest took 0 sec
+Testcase: defaultCardTest took 0.001 sec

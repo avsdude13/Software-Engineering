@@ -1,0 +1,11 @@
+Testsuite: swefun.cardgames.playingcards.DeckTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 sec
+
+Testcase: defaultDeckTest took 0.012 sec
+Testcase: mutateDeck took 0.001 sec
+Testcase: modifiedDeckEqualsTest took 0.003 sec
+Testcase: shuffledDeckOKTest took 0 sec
+Testcase: dealTest took 0.001 sec
+Testcase: hashCodeTest took 0.001 sec
+Testcase: defaultDeckEqualsTest took 0.001 sec
+Testcase: shuffledDeckTest took 0.001 sec

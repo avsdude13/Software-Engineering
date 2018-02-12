@@ -1,0 +1,31 @@
+package Districting;
+
+import java.util.ArrayList;
+
+/**
+ * Performs districting functions/operations on regions
+ * @author Josh McKinstry
+ *
+ */
+public class Districting {
+
+	private ArrayList<Region> regionList = new ArrayList<Region>();
+	
+	/**
+	 * New districting project on a new region
+	 */
+	public Districting () {
+		this.regionList.add(new Region("R" + regionList.size()+1));
+	}
+	
+	/**
+	 * Runs a new districting project
+	 */
+	public static void main(final String[] args) {
+		
+		// Districting newDis1 = new Districting();
+		
+		System.out.println("Hello");
+	}
+	
+}
