@@ -1,0 +1,77 @@
+package Districting;
+
+import java.util.ArrayList;
+
+/**
+ * Performs districting functions/operations on regions.
+ * @author Josh McKinstry
+ *
+ */
+public class Districting {
+
+    /** A list of regions to perform redistricting on. */
+    private ArrayList<Region> regionList = new ArrayList<Region>();
+
+    /**
+     * New districting project on a new region.
+     */
+    public Districting() {
+        this.regionList.add(new Region("R" + regionList.size() + 1));
+    }
+    
+    /**
+     * Creates and stores properly sized districts for the given region.
+     * @param region Region to district
+     * @return Region with New properly sized district Object references
+     */
+    public Region numDistricts(Region region) {
+    	UserInterface user = new UserInterface();
+    	int numDist = region.getRegionSize()
+    		/ user.userNumDistricts(region.getRegionSize());
+    	return addDistricts(numDist, region);
+    }
+    
+    /**
+     * Adds the desired number of districts to regionDistricts.
+     * @param numDist Number of districts to add
+     * @param region Region to add districts to
+     * @return Region with new district List
+     */
+    public Region addDistricts(int numDist, Region region) {
+    	int [] distSizes = sizeDistricts(numDist, region.getRegionSize());
+    	for (int i = 0; i < numDist; i++) {
+    		region.getRegionDistricts().add(new District("00" + i, distSizes[i]));
+    	}
+        return region;
+    }
+    
+    /**
+     * Properly sizes each district with a set limit of voters
+     * @param numDist Number of districts being added
+     * @param rSize Number of voters in the region
+     * @return districtSizes an array of the sizes for each district
+     */
+    public int[] sizeDistricts(int numDist, int rSize) {
+    	int [] districtSizes = new int[numDist];
+    	int rem = rSize / numDist;
+    	for (int i : districtSizes) {
+    		districtSizes[i] = rSize / numDist;
+    	}
+    	if (rem != 0) {
+    		for (int i = 0; i < rem; i++) {
+    			districtSizes[i]++;
+    		}
+    	}
+    	return districtSizes;
+    }
+
+    /**
+     * Runs a new districting project.
+     */
+    public static void main(String[] args) {
+
+        Districting newDis1 = new Districting();
+        newDis1.numDistricts(newDis1.regionList.get(0));
+    }
+
+}

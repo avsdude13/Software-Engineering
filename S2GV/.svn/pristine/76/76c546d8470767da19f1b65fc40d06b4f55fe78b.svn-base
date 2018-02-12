@@ -1,0 +1,51 @@
+package Districting;
+
+import java.util.ArrayList;
+
+/**
+ * Performs districting functions/operations on regions.
+ * @author Josh McKinstry
+ *
+ */
+public class Districting {
+
+    /** A list of regions to perform redistricting on. */
+    private ArrayList<Region> regionList = new ArrayList<Region>();
+
+    /**
+     * New districting project on a new region.
+     */
+    public Districting() {
+        this.regionList.add(new Region("R" + regionList.size() + 1));
+    }
+
+    /**
+     * Creates and stores properly sized districts for the given region.
+     * @param region Region to district
+     * @return New Region with New District Object references
+     */
+    public Region numDistricts(Region region) {
+    	UserInterface user = new UserInterface();
+    	int numDist;
+    	if (user.chooseDistricts()) {
+    		numDist = region.getRegionSize() / user.userNumDistricts();
+    	} else {
+    		do {
+    			numDist = (int) Math.random();
+    		}
+    		while (numDist >= region.getRegionSize());
+    	}
+    	return region;
+    }
+
+    /**
+     * Runs a new districting project.
+     * @param takes any input given with call
+     */
+    public static void main(final String[] args) {
+
+        Districting newDis1 = new Districting();
+        newDis1.numDistricts(newDis1.regionList.get(0));
+    }
+
+}

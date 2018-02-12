@@ -1,0 +1,57 @@
+Requirements for Redistricting Project by S2GV (Bob, Josh and Matt)
+
+The goal of the Redistricting Project is to divide a geographical region into election districts 
+
+1. The product must differentiate between two parties
+1.1 The product must visually distinguish party A from party B
+1.2 The product must visually represent party A as a color that is different from party B
+1.3 The product must visually represent party B as a color that is different from party A
+
+2. The product must display voters
+2.1 The product must have voters that can identify as either party A or party B
+2.2 The product must visually display a voter as a square within the region/grid
+2.3 The product must have no voters without a party affiliation
+2.4 The product must distinguish between voters by an identification number
+2.5 The product must have the capability for the user to manually assign parties to voters
+2.6 The product must have the capability for the user to randomly assign parties to voters
+
+3. The product must display regions
+3.1 The product must generate regions based on user-given dimensions
+3.2 The product must visually represent regions as grids with each cell in the grid representing a voter
+3.3 The product must have the regions be simplified into rectangular grids
+3.4 The product must draw any known regions to display them to the user
+3.5 The product must save all districted regions
+3.6 The product must save all undistricted regions
+
+4. The product must create districts
+4.1 The product must create districts with an equal number of voters, if possible
+4.2 The product must use all voters when creating districts
+4.3 The product must define districts as non-overlapping and contiguous
+4.4 The product must identify the favored party for each district as A majority, B majority or balanced
+4.5 The product must gerrymander districts if specified
+
+5. The product must create a sample region
+5.1 The product must randomly assign parties to voters
+5.2 The product must create a region of random dimensions
+
+6. The product must allow user interaction
+6.1 The product must allow the user to input dimensions to create the region
+6.2 The product must allow the user to input the party affiliations for each voter
+6.3 The product must allow the user to create randomly sized regions with randomly assigned parties
+6.3 The product must allow the user to ask to see a region with a particular favored party preference
+6.4 The product must allow the user to input the number of districts in a region
+
+
+Glossary
+The product must define voters as a location in the region
+
+Party: An affiliation that differentiates voters
+Favored Party: A district's favored party is the party that has the highest representation amongst its voters. A region's favored party is the party that has the highest representation amongst its districts.
+Gerrymandering: A process that can sway the favored party of a region towards either party A or party B.
+Region: A region is a geographical area that contains voters
+Draw: This will create a visual display of any region to a 
+District: A grouping of voters that divides the region
+Voter: A human that may be affiliated with either Party A or Party B
+Grid: The visual representation of a region. For our purposes all regions are simplified into rectangular grids and each grid is composed of squares.
+Square: An individual cell of a grid that visually represents a voter. Squares must be filled with one of two distinct colors. 
+Color: One color will visually represent that a voter has chosen party A. Another visually distinct color will visually represent that a voter has chosen party B. 

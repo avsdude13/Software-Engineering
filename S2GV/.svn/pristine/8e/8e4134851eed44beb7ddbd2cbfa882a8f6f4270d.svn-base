@@ -1,0 +1,86 @@
+UML Diagram
+
+Class : Voter
+————————————————————————————————
+- party : char
+- voterID : int
+- isInDistrict : boolean
+————————————————————————————————
++ Voter(int ID)
++ Voter(int ID, char party)
+- getParty() : return char
++ setParty( char party ) : void
+- getvoterID() : return int
++ setvoterID( String voterID ) : void
+- getIsInDistrict() : return boolean
++ setIsInDistrict(boolean inDistrict) : void
++ toString() : String
+
+// removed the color from voter because the color of a party is a quality of the party, not the voter. Otherwise, two voters in the same party could technically have different colors. 
+
+Class : Region
+————————————————————————————————
+- regionID : String
+- regionGrid : Voter[][]
+- isDistricted : boolean
+- regionDistricts : List<District>
+- regionFavoredParty : char
+————————————————————————————————
++ Region(String ID)
++ Region(String ID, int rows, int columns)
+- addVoter( Voter voter ) : void
+- removeVoter ( Voter voter ) : void
+- getID() : return String
++ setID( String ID ) : void
++ populateRegion(int rows, int columns) : void
++ setPartyManual() : Voter[][]
++ changePartyByID(int ID) : Voter[][]
++ changePartyByCell(int row, int column)
++ setPartyAuto() : Voter[][]
++ drawRegionGrid() : void
++ toString() : String
++ clearRegion() : void
++ getFavoredParty() : char
+- setFavoredParty(char c) : void
+
+
+Class : District
+————————————————————————————————
+- VotersInDistrict : Voter[]
+- DistrictID : Integer
+- districtFavoredParty : char
+————————————————————————————————
++ District(String ID)
++ District(String ID, int numVoters)
++ addVoter(Voter voter) : void
++ removeVoter(Voter voter) : void
++ clearDistrict() : void
++ getDistrictID : String
++ setDistrictID( int districtID ) : void
++ getFavoredParty : char
+- setFavoredParty( char party ) : void
+
+
+Class : UserInterface
+————————————————————————————————
++ NumberOfDistricts : Integer
++ Parties : String
++ FavoredParty : String
++ Regions : Array
+————————————————————————————————
+- getNumberOfDistricts() : return int numberOfDistricts
++ setNumberOfDistricts( int numberOfDistricts ) : void
+- getParties() : return String Parties
++ setParties( String party ) : void
+- getFavoredParty() : return String favoredParty
++ setFavoredParty( String favoredParty ) : void
+- getRegions() : return Array Region[]
++ setRegions( Array region[] ) : void
+
+
+Class : Districting
+————————————————————————————————
+- regionList : ArrayList<Region>
+————————————————————————————————
++ addNewRegion( Char label ) : void
+- removeRegion( Char label ) : void

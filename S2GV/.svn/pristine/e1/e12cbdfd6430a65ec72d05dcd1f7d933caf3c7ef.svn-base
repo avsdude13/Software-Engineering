@@ -1,0 +1,86 @@
+package Districting;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Region {
+
+	private Voter regionGrid[][];
+	private String regionID;
+    private boolean isDistricted;
+    private List<District> regionDistricts;
+    private char regionFavoredParty;
+    
+    public Region (String ID) {
+        this.regionID = ID;
+        this.isDistricted = false;
+        regionGrid = new Voter[0][0];
+        regionDistricts = new ArrayList<District>();
+    }
+    
+    public Region (String ID, int rows, int columns) {
+        this.regionID = ID;
+        this.isDistricted = false;
+        regionGrid = new Voter[rows][columns];
+        regionDistricts = new ArrayList<District>();
+    }
+    
+    private void addVoter(Voter voter) {
+        
+    }
+    
+    private void removeVoter(Voter voter) {
+        
+    }
+    
+    private String getID() {
+        return this.regionID;
+    }
+    
+    public void setID(String ID) {
+        this.regionID = ID;
+    }
+    
+    public void populateRegion(int rows, int columns) {
+        
+    }
+    
+    public Voter[][] setPartyManual() {
+		return regionGrid;
+    }
+    
+    public Voter[][] setPartyAuto() {
+        return regionGrid;
+    }
+    
+    public Voter[][] changePartyByID(int ID) {
+        return regionGrid;
+    }
+    
+    public Voter[][] changePartyByCell(int row, int column) {
+        return regionGrid;
+    }
+    
+    public void drawRegionGrid() {
+        
+    }
+    
+    public String toString() {
+        return "";
+    }
+	
+    public void clearRegion() {
+        
+    }
+    
+    public char getFavoredParty() {
+		return regionFavoredParty;
+        
+    }
+    
+    private void setFavoredParty(char party) {
+        
+    }
+}
+

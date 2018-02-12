@@ -1,0 +1,28 @@
+package Districting;
+
+/**
+ * Class to handle all user-application interaction.
+ * @author Josh McKinstry
+ */
+public class UserInterface {
+
+	/**
+	 * Ask user for the desired number of districts.
+	 * @return desired Desired number of districts
+	 */
+	public int userNumDistricts() {
+		int desired = 0;
+		return desired;
+	}
+	
+	/**
+	 * Ask user if they would like to choose the number of districts.
+	 * True if user would like to input number themselves.
+	 * False if user would like a random number of districts created.
+	 * @return choice
+	 */
+	public boolean chooseDistricts() {
+		boolean choice = true;
+		return choice;
+	}
+}

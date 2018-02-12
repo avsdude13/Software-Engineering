@@ -1,0 +1,102 @@
+package Districting;
+
+import java.util.Scanner;
+
+/**
+ * Class to handle all user-application interaction.
+ * @author Josh McKinstry
+ */
+public class UserInterface {
+
+    /** scanner used to take keyboard input */
+    private Scanner userIN = new Scanner(System.in);
+
+    /**
+     * Ask user for the desired number of districts.
+     * @param limit Limit is the size of the region
+     * @return desired Desired number of districts
+     */
+    public int userNumDistricts(final int limit) {
+        int desired;
+        System.out.println("How many districts are in the region?");
+
+    do {
+        System.out.println("Voters in Region : " + limit);
+        System.out.println("Please enter a number less than the number of Voters");
+        desired = userIN.nextInt();
+        if (desired >= limit) {
+            desired = limit;
+            System.out.println("The number you entered is greater or equal\n"
+                    + "to the number of voters in the region. The number of\n"
+                    + "districts will be equal to the number of voters.\n"
+                    + "There will be 1 voter per district.");
+        }
+        }
+        while (desired > limit);
+        return desired;
+    }
+    /**
+     * Prints welcome statement for the application. Asks user for
+     * region parameters. 
+     * @return
+     */
+    public int[] welcome() {
+    	System.out.println("Welcome to the redistricting application.\n"
+    			+ "Please enter the dimensions for the region you would like to see.\n"
+    			+ "EX:\n"
+    			+ "    X : 4"
+    			+ "    Y : 3");
+    	int[] dimensions = new int[2];
+    	System.out.print("    X : ");
+    	dimensions[0] = userIN.nextInt();
+    	System.out.println("    Y : ");
+    	dimensions[1] = userIN.nextInt();
+    	return dimensions;
+    }
+    
+    /**
+     * Asks user to randomize party settings or manually enter parties.
+     * @return true if user wishes to enter parties manually
+     * @return false if user wishes parties to be entered randomly
+     */
+    public boolean userAssign() {
+    	System.out.println("Would you like to\n"
+    			+ "1. Enter parties for each voter in region individually?\n"
+    			+ "2. Randomize parties for each voter in region?\n"
+    			+ "Please enter 1 or 2.");
+    	while (userIN.hasNext()) {
+    		int option = userIN.nextInt();
+    		if (option == 1) {
+    			return true;
+    		}
+    		else if (option == 2) {
+    			return false;
+    		}
+    		else 
+    			System.out.println("Invalid option: Please enter 1 or 2.");
+    	}
+		return true;
+    }
+
+    /**
+     * Ask user for specific party input. Assign Party A or B.
+     * @return
+     */
+    public char askParty() {
+    	Scanner pA = new Scanner(System.in);
+    	System.out.println("Enter party for Voter.\n"
+    			+ "Enter a or b.");
+
+    	char party = ' ';
+    	while (pA.hasNext()) {
+    		party = pA.next().charAt(0);
+    		if (!(party =='a') && !(party == 'b')) 
+    			System.out.println("Invalid party, please enter a or b.");
+    		else if ((party == 'a') || (party == 'b')) 
+    			return party;
+    	}
+    	return party;
+
+    }
+
+}

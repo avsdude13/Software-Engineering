@@ -1,0 +1,9 @@
+package Districting;
+
+/**
+ * Class to handle all user-application interaction.
+ * @author Josh McKinstry
+ */
+public class UserInterface {
+
+}

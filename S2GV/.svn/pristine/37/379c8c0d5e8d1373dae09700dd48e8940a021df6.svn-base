@@ -1,0 +1,26 @@
+04/28/2017
+
+The group met up face to face and started to implement methods, and
+
+write couple unit tests.
+
+05/01/2017
+
+Mr.Joshua has begun to implement the code where the empty grids will
+
+populate voters with preferred party; however,
+
+the method askParty() wasn't able to be implemented.
+
+
+05/02/2017
+
+Around 12PM, 
+
+we weren't able to correctly compare the Strings in the askParty method.
+
+The askParty method had ||, while && was the correct logic to use.
+
+The problem was resolved.
+
+Around 11PM, final iteration of going over the style conventions by using CheckStyle began.

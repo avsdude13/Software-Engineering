@@ -1,0 +1,91 @@
+package redistricting;
+
+/**
+ * @author S2GV Josh McKinstry, Matt Kline, Dong (Bob) Lee
+ */
+public class Voter {
+
+    /** Party association of voter. */
+    private char party;
+    /** Numerical value to distinguish voters in a region. */
+    private int voterID;
+    /** Truth value to identify whether voter is in a district. */
+    private boolean isInDistrict;
+
+    /** An empty contructor. **/
+    public Voter() {
+
+    }
+
+    /**
+     * Constructor creates voter with ID reference, does not assign party.
+     * @param vID numerical value to differentiate between voters
+     */
+    public Voter(final int vID) {
+        this.voterID = vID;
+        this.isInDistrict = false;
+        this.party = ' ';
+    }
+
+    /**
+     * Constructor creates voter with ID reference, assigns party.
+     * @param vID numerical value to differentiate between voters
+     * @param partyAffiliation char value 'A' or 'B'
+     */
+    public Voter(final int vID, final char partyAffiliation) {
+        this.voterID = vID;
+        this.party = partyAffiliation;
+        this.isInDistrict = false;
+    }
+
+    /**
+     * Get the party of this voter object.
+     * @return Party of the selected voter
+     */
+    public char getParty() {
+        return this.party;
+    }
+
+    /**
+     * Get the voter's identification number.
+     * @return Region unique ID number of voter
+     */
+    public int getID() {
+        return this.voterID;
+    }
+
+    /**
+     * Gets truth value of isInDistrict.
+     * @return true if voter is in district, false otherwise
+     */
+    public boolean getIsInDistrict() {
+        return this.isInDistrict;
+    }
+
+    /**
+     * Sets party of the voter.
+     * @param partyAffiliation The voters desired party
+     */
+    public void setParty(final char partyAffiliation) {
+        this.party = partyAffiliation;
+    }
+
+    /**
+     * Set the truth value of isInDistrict.
+     * @param inDistrict true if voter is in district, false otherwise
+     */
+    public void setIsInDistrict(final boolean inDistrict) {
+        this.isInDistrict = inDistrict;
+    }
+
+    /**
+     * Represent Voter as a string of ID and Party.
+     * @return voterString formatted "Voter 'ID' supports Party 'Party'"
+     */
+    public String toString() {
+        String voterString = "Voter " + this.voterID
+            + " supports Party " + this.party;
+        return voterString;
+    }
+
+}

@@ -1,0 +1,40 @@
+package Districting;
+
+import java.util.Scanner;
+
+/**
+ * Class to handle all user-application interaction.
+ * @author Josh McKinstry
+ */
+public class UserInterface {
+
+	/** scanner used to take keyboard input */
+    private Scanner userIN = new Scanner(System.in);
+
+	/**
+	 * Ask user for the desired number of districts.
+	 * @param limit Limit is the size of the region
+	 * @return desired Desired number of districts
+	 */
+	public int userNumDistricts(final int limit) {
+        int desired;
+        System.out.println("How many districts are"
+				+ " in the region?");
+
+		do {
+		System.out.println("Voters in Region : " + limit);
+		System.out.println("Please enter a number less than the number of Voters");
+		desired = userIN.nextInt();
+		if (desired >= limit) {
+			desired = limit;
+			System.out.println("The number you entered is greater or equal\n"
+					+ "to the number of voters in the region. The number of\n"
+					+ "districts will be equal to the number of voters.\n"
+					+ "There will be 1 voter per district.");
+		}
+		}
+		while (desired > limit);
+		return desired;
+	}
+	
+}
